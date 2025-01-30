@@ -33,7 +33,7 @@ jobs:
           fi
   tests:
     runs-on: ${{ matrix.os}}
-    needs: pre-commit
+    needs: [pre-commit,cpp-check]
     strategy:
       matrix:
         os:
