@@ -20,6 +20,7 @@ permissions:
 
 jobs:
   create_doc:
+    if: github.repository == 'Cramal/splinart-cpp'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
