@@ -1,6 +1,9 @@
 name: "Tests that take a lot of time"
 
-on: pull_request
+on:
+  schedule:
+    - cron: "15 14 * * *"   # <=== Change this value
+  workflow_dispatch:
 
 jobs:
   check_new_commit:
