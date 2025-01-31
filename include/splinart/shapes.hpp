@@ -3,11 +3,7 @@
 
 #pragma once
 
-#include <array>
-
-#include <utility>
 #include <xtensor/xfixed.hpp>
-
 #include <xtensor/xtensor.hpp>
 
 namespace splinart
