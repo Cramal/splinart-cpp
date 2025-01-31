@@ -31,6 +31,7 @@ jobs:
               run: pixi run doc
 
             - name: Upload artifact
+              id: deployment
               uses: actions/upload-pages-artifact@v2
               with:
                   path: "doc/build/html"
