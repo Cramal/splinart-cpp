@@ -1,6 +1,12 @@
 name: "Create the documentation"
 
-on: pull_request
+on:
+  push:
+    branches:
+      main
+  pull_request:
+    branches:
+      main
 
 # Allow one concurrent deployment
 concurrency:
@@ -29,6 +35,7 @@ jobs:
         with:
           path: doc/build/html/
   deploy:
+    if: github.repository == 'Cramal/splinart-cpp' && github.ref == 'refs/heads/main'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
