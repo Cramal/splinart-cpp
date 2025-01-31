@@ -29,9 +29,7 @@ namespace splinart
         auto xs      = xt::view(spline, xt::all(), 0);
         auto ys      = xt::view(spline, xt::all(), 1);
         auto newxs   = xt::floor(xs * width);
-        auto xs_mask = newxs >= 0
-
-                    && newxs < width;
+        auto xs_mask = newxs >= 0 && newxs < width;
 
         auto newys   = xt::floor(ys * height);
         auto ys_mask = newys >= 0 && newys < height;
