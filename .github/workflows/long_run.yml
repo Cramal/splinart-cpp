@@ -1,9 +1,11 @@
 name: "long check"
 
 on:
-    pull_request:
+    push:
+      branches:
+        - main
     schedule:
-        - cron: "*/5 * * * *"
+        - cron: "0 15 * * *"
 
 jobs:
     check_new_commit:
@@ -14,7 +16,7 @@ jobs:
             - uses: actions/checkout@v3
 
             - id: new_commits
-              run: echo "nb_commits=$(git log --oneline --since '5 minutes ago' | wc -l)" >> $GITHUB_OUTPUT
+              run: echo "nb_commits=$(git log --oneline --since '24 ago' | wc -l)" >> $GITHUB_OUTPUT
 
     clang-tidy-check:
         needs: check_new_commit
