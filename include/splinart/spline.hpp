@@ -36,7 +36,7 @@ namespace splinart
                                                  / xt::view(dif, xt::range(_, dif.shape()[0] - 1), xt::newaxis());
         for (std::size_t i = 1; i < n - 1; ++i)
         {
-            auto p_i         = sig[i - 1] * xt::view(y2s, i - 1) + 2.0;
+            auto p_i         = (sig[i - 1] * xt::view(y2s, i - 1)) + 2.0;
             xt::view(y2s, i) = (sig[i - 1] - 1) / p_i;
             xt::view(u_i, i) = (6 * xt::view(u_i, i) / (xs[i + 1] - xs[i - 1]) - sig[i - 1] * xt::view(u_i, i - 1)) / p_i;
         }
