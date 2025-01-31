@@ -19,7 +19,7 @@ Checks: "*,
         -hicpp-named-parameter,
         -cppcoreguidelines-avoid-magic-numbers,
         -cppcoreguidelines-init-variables,
-        -misc-unused-inclue,
+        -misc-unused-include,
 "
 WarningsAsErrors: '*'
 HeaderFilterRegex: ''
