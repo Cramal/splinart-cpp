@@ -20,7 +20,9 @@ jobs:
         with:
           pixi-version: v0.40.2
           cache: true
-      - run : pixi run doc
+      - name: Build static files
+        id: build
+        run : pixi run doc
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
