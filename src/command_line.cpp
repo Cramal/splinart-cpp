@@ -23,7 +23,7 @@ int main(int argc,
     std::size_t nb_circles = 1;
     std::size_t nb_samples = 10000;
     bool has_random_color  = false;
-    xt::random::seed(time(NULL));
+    xt::random::seed(time(nullptr));
     CLI::App app{"splinart-cpp"};
     app.add_option("--img-size", img_size, "The size of the square image in pixels")->capture_default_str();
     app.add_option("--nb-circles", nb_circles, "The number of circles")->capture_default_str();
@@ -31,8 +31,8 @@ int main(int argc,
     app.add_flag("--random-color", has_random_color, "The circle color are randomly selected")->capture_default_str();
     CLI11_PARSE(app, argc, argv);
 
-    auto rand_centers = 0.3 + 0.4 * xt::random ::rand<double>(std::array<std::size_t, 2>{nb_circles, 2UL});
-    auto rand_radius  = 0.2 + 0.1 * xt::random::rand<double>(std::array<std::size_t, 2>{nb_circles, 1UL});
+    auto rand_centers = 0.3 + (0.4 * xt::random ::rand<double>(std::array<std::size_t, 2>{nb_circles, 2UL}));
+    auto rand_radius  = 0.2 + (0.1 * xt::random::rand<double>(std::array<std::size_t, 2>{nb_circles, 1UL}));
     std::vector<splinart::Circle> circles;
     for (std::size_t i = 0; i < nb_circles; i++)
     {

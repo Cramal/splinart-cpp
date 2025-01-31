@@ -115,8 +115,8 @@ namespace splinart
 
         auto xs_func = []()
         {
-            std::size_t nsamples = 500;
-            double pi            = xt::numeric_constants<double>::PI;
+            const std::size_t nsamples = 500;
+            double pi                  = xt::numeric_constants<double>::PI;
             return xt::eval(xt::fmod(xt::random::rand<double>({1})[0] + xt::linspace<double>(0, 2 * pi, nsamples), 2 * pi));
         };
 
